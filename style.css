@@ -1,0 +1,54 @@
+
+h1 {
+	font-size: 35px;
+	font-family: Poppins;
+	text-align: center;
+	font-weight: 700;
+}
+
+.byline {
+	font-size: 20px;
+	text-align: center;
+}
+.date {
+	font-size: 20px;
+	font-style: italic;
+	text-align: center;
+}
+
+img{
+	max-width: 600px;
+	display: block;
+  	margin-left: auto;
+ 	margin-right: auto;
+  	width: 50%;
+}
+
+
+.header-section {
+	text-align: center;
+}
+
+.article-text{
+	text-align: left;
+	margin-right: 170px;
+	margin-left: 170px;
+}
+
+.emphasize-letter{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+h2{
+	font-size: 25px;
+	font-family: Poppins;
+	text-align: center;
+	font-weight: bold;
+}
+
+.methodology-text{
+	text-align: left;
+	margin-right: 170px;
+	margin-left: 170px;
+}
