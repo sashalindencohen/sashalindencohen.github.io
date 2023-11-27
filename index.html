@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html>
+
+	<head> 
+		<title> My first site </title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+	</head>
+
+	<body>
+
+		<div class="header-section">
+
+			<h1> Brooklyn’s Second Wealthiest Community District Has More City-Funded Social Service Programs than Any Other Brooklyn CD </h1>
+
+			<p class="byline">By Sasha Cohen </p>
+			<p class="date">November 4, 2023</p>
+
+		</div>
+
+		<div class="article-body">
+
+			<div class="chart-section">
+				<img src="assignment1_chart.jpeg" alt="Chart-Image">
+			</div>
+
+			<div class="text-section">
+				<p class="article-text">
+					<span class="emphasize-letter">E</span>very year, the City of New York spends millions of dollars on Social Services Programs across all five boroughs. In Brooklyn alone, there are over 1600 distinct programs that the city financially supports. But according to city and census data, some of Brooklyn’s wealthiest Community Districts are home to more social services programs than other, needier Community Districts. 	
+				</p>
+				<p class="article-text">
+					The Community District (CD) with the second highest median household income is CD02, encompassing Downtown Brooklyn, Brooklyn Heights, Cobble Hill, Boerum Hill, and other notoriously wealthy Brooklyn neighborhoods. The median household income in CD2 is $132,000, and the district boasts a whopping 184 social service programs–more than any other community district in the Borough. In CD13, where median household income is $45,000, the city only funds 67 social service programs. 
+				</p>
+				<p class="article-text">
+					The data also shows that the two CDs with the lowest median incomes–$36,000 and $45,000 respectively–both have a higher than average number of social service programs. But it demonstrates a slight pattern, that as median household income increases, so too does the number of city-funded programs. 
+				</p>
+			</div>
+
+		</div>
+
+		<div class="methodology">
+			<h2> Methodology </h2>
+			<p class="methodology-text">
+				I used two different sets of raw data to get these findings. The first was from NYC Open Data, listing every City-Funded Social Service Program (SSP) by location–both community district and zip code. I filtered the data to include only Brooklyn locations before uploading it to my google sheet. I cleaned the data by pasting only the columns I needed–name of program, community board number, and zip code. 
+			</p>
+			<p class="methodology-text">
+				The second data set I used was one that I created through social explorer, which included a breakdown of every Brooklyn zip code and its corresponding median household income. I cleaned this data similarly, by extracting the information that I needed (zip code, median household income) and pasting them in a new sheet. 
+			</p>
+			<p class="methodology-text">
+				Next I started to combine the data, and realized the data from NYC Open Data needed to be cleaned further. In particular, the community districts were written as numbers–301, 302, and so on. The 3 represents Brooklyn, and because I was doing this project exclusively about Brooklyn, I knew that the two digit indicators would be sufficient. Further, I knew that I wanted my chart to have the community districts on the bottom. Because each district was represented by a number, I needed to turn them into strings, in the form of CBXX. I created a new column with the function To_Text(), where I turned each CD value into a string. Then I created a column full of the prefix “CB.” Lastly, I created a new column where I used the concatenate() function to add the previous two columns together. 
+			</p>
+			<p class="methodology-text">
+				I also used the vlookup() function to add a column to my NYC Open Data chart that reflected the median household income for every city-funded social service program based on its corresponding zip code. From there I created a pivot table: each row was a CD, and had two corresponding values: the first was the number of SSPs in a given district, the second was the average of the median household incomes in the CD’s district area codes. This is the part of my methodology that I feel most uncertain about, but based on our early lessons on when to use mean, median and mode, I thought that the average of a given district's median income based on zip code would be an accurate reflection of comparative wealth. 
+			</p>
+			<p class="methodology-text">
+				I pasted the results of this pivot table into a new tab. I then changed the format of the median household income so that it would be measured in thousands	of dollars. This allowed me to create a single chart where it was easier to compare the relative number of SSPs as compared to median income, rather than looking at two charts with completely different scales. I ordered the table based on income, from lowest to highest, to create visual ease when reading the chart. Using DataWrapper, I created a chart that allows the viewer to compare median household income in a given community district with the number of social service programs in that district. 
+			</p>
+		</div>
+
+
+
+
+	</body>
+
+
+</html>
